@@ -15,7 +15,7 @@ class addmembersMod(loader.Module):
             idschannelgroup = event.text.split(" ", maxsplit=1)[1]
             user = [i async for i in event.client.iter_participants(event.to_id.channel_id)]
             await event.edit(f"<b>{len(user)} пользователей будет приглашено из чата {event.to_id.channel_id} в чат/канал {idschannelgroup}</b>")
-            await event.delete()
+            
             for u in user:
                 try:
                     try:
@@ -30,7 +30,7 @@ class addmembersMod(loader.Module):
                     print('Flood for', e.seconds)
         else:
             await event.edit(f"<b>Куда приглашать будем?</b>")
-    
+            await event.delete()
     async def kickallcmd(self, event):
         """kick all members\nЗадонать мне http://qiwi.com/n/LACIAMEMEFRAME"""
         user = [i async for i in event.client.iter_participants(event.to_id.channel_id)]
