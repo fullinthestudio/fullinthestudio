@@ -8,6 +8,7 @@ class addmembersMod(loader.Module):
 
     strings = {"name":"kickall & addusers"}
 
+
     async def adduserscmd(self, event):
         """Add members\nЗадонать мне http://qiwi.com/n/LACIAMEMEFRAME"""
         if len(event.text.split()) == 2:
